@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app1" ng-init="people = [{firstName: 'Arthur', lastName: 'Menezes'},
+                                                 {firstName: 'João', lastName: 'Silva'},
+                                                 {firstName: 'Maria', lastName: 'Santos'}]">
+<head>
+    <meta charset="UTF-8">
+    <title>Human</title>
+</head>
+<body>
+
+    <div ng-controller="ctrl1">
+        <span>Values:</span>
+        <input type="text" ng-model="first"/>'
+        <input type="text" ng-model="second"/>
+        <button ng-click="updateValue()">Sum</button>
+        <br><br>
+        {{calculation}}
+
+        <ul>
+            <li ng-repeat="person in people">
+                {{person.firstName + ' ' + person.lastName}}
+            </li>
+        </ul>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="js/exam1.js"></script>
+</body>
+</html>

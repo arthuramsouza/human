@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">human</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -37,9 +37,6 @@
                         <a class="dropdown-item" href="#">Afastamentos</a>
                         <a class="dropdown-item" href="#">Parametrizações</a>
                     </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -99,20 +96,28 @@
 
     <br><br>
 
-    <div ng-controller="ctrl1">
-        <span>Values:</span>
-        <input type="text" ng-model="first"/>'
-        <input type="text" ng-model="second"/>
-        <button ng-click="updateValue()">Sum</button>
-        <br><br>
-        {{calculation}}
+    <div class="container">
+        <div ng-controller="ctrl1">
+            <span>Soma:</span>
+            <input type="text" ng-model="first"/> +
+            <input type="text" ng-model="second"/>
+            <button ng-click="updateValue()">Somar</button>
+            <br><br>
+            {{calculation}}
 
-        <ul>
-            <li ng-repeat="person in people">
-                {{person.firstName + ' ' + person.lastName}}
-            </li>
-        </ul>
-
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                    <th scope="col">Nome</th>
+                    <th scope="col">Sobrenome</th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="person in people">
+                        <td>{{person.firstName}}</td>
+                        <td>{{person.lastName}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <!-- FOOTER -->
